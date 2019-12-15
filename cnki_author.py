@@ -23,8 +23,8 @@ import csv
 
 file_dir = '/home/dutir/zhangfan2/spider/code'
 # author_list = ["林鸿飞", "刁宇峰", "卢湖川", "刘挺"]
-author_list = ["刁宇峰", "杨亮", "刘挺", "卢湖川"]
-# author_list = ["刁宇峰"]
+# author_list = ["刁宇峰", "杨亮", "刘挺", "卢湖川"]
+author_list = ["刁宇峰"]
 cnki_search_url = 'https://www.cnki.net/'
 
 #从左至右分别为：发表在期刊上的文献、发表在外刊上的文献、发表在报纸上的文献、发表在会议上的文献、发表在博硕上的文献、曾参考的文献、合作作者、获得的支持基金
