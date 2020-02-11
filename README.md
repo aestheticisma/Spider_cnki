@@ -3,7 +3,7 @@
 ### 一、环境配置
 我们主要用到的工具有`python`中的`selenium`和`chrome`，以及需要驱动`chrome`的插件`webdriver`。
 下面是来自百度关于`selenium`的介绍。
-![1.png](cnki-spider/1.png)
+![1.png](img/1.png)
 从图中我们可以看到，利用`selenium`我们可以模拟用户的浏览器行为，从而获取到我们需要的网页内容，因为能模拟用户行为，所以利用`selenium`进行爬虫自然可以一定程度上避免被网站反爬虫拦截，但也有不好的一面，比如爬取的速度相对来说会慢一些。
 #### 1. 安装`selenium`
 ```bash
@@ -39,22 +39,22 @@ browser.get('https://www.baidu.com/')
 ```
 接下来让我们在百度的搜索框中输入些什么进行搜索看看。
 既然要输入，那我们首先需要找到在哪个位置进行输入，因此我们需要简单定个位，打开百度页面的源代码看一下输入框在哪。
-![2.png](cnki-spider/2.png)
+![2.png](img/2.png)
 我们可以发现原来这个输入框的`class = "s_ipt"`，那我们就先通过class来定位试试吧！
 ```python
 search_input = browser.find_element_by_class_name('s_ipt')
 search_input.clear()
 search_input.send_keys('IR实验室')
 ```
-![3.png](cnki-spider/3.png)
+![3.png](img/3.png)
 可以看到我们成功的在输入框里输入了搜索内容，下面就让我们点击一下“百度一下”搜索试试吧。
 看一下“百度一下”按键的源码是什么：
-![4.png](cnki-spider/4.png)
+![4.png](img/4.png)
 可以发现它的`id = "su"`，那我们就通过id来定位它吧！
 ```python
 browser.find_element_by_id('su').click()
 ```
-![5.png](cnki-spider/5.png)
+![5.png](img/5.png)
 除了通过点击“百度一下”按钮，我们通常搜索的时候一般是直接按回车键的，那在这里可不可以模拟回车键呢？
 ```python
 from selenium.webdriver.common.keys import Keys
