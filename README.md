@@ -187,5 +187,5 @@ browser.quit()
 如果你想获取完整的爬取知网作者知网节的代码:
 ```bash
 git clone https://github.com/aestheticisma/spider_cnki
-···
+```
 
