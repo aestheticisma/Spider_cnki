@@ -392,7 +392,12 @@ class cnki_author_spider(object):
 		self.contents_fonds(type_str[7], frame_str[7])
 
 if __name__ == '__main__':
-	browser = webdriver.Chrome()
+	chrome_options= webdriver.ChromeOptions()
+	chrome_options.add_argument('--no-sandbox')
+	chrome_options.add_argument('--disable-gpu')
+	chrome_options.add_argument('--headless')
+	chrome_options.add_argument('--log-level=3')
+	browser = webdriver.Chrome(chrome_options=chrome_options)
 	driver = cnki_author_spider(browser,author_list[0])
 	driver.open_author_page()
 	driver.output_contents()
