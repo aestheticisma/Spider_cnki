@@ -51,10 +51,11 @@ class cnki_author_spider(object):
 	def open_author_page(self):
 		# 知网存在框架源代码 需要新的网址
 		# self.browser.get(cnki_next_page)
-		self.browser.switch_to.frame(1)
+		self.browser.switch_to.frame('iframeResult')
 		time.sleep(2)
 		# 找到第2个font （需要点击的作者名在font标签里）
 		self.browser.find_element_by_xpath('//td[@class="author_flag"]/a/font').click()
+		
 		self.browser.switch_to.default_content()
 
 		# 打开新标签页需要切换控制权
